@@ -21,7 +21,7 @@ A webpage is designed to showcase my HTML and CSS coding skills as well as my pe
 The screenshots of the final look of the website is attached. The first image shows the layout of a bigger screen and the second is for a smaller screen
 
 ![Screenshot 1](./image/page%201.png)
-1[Screenshot 2](./image/page%202.png)
+![Screenshot 2](./image/page%202.png)
 
 ## Deployment
 
