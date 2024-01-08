@@ -1,58 +1,82 @@
 * {
     box-sizing: border-box;
-  }
+}
   
-  body {
+body {
     font-family: Arial;
     margin: 0;
     min-height: 100vh;
     max-width: 1500px;
     background-color: beige;
-  }
-  
-  header {
+}
+
+header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1%;
     background-color: #7fffd4;
     color: #000000
-  }
+}
   
-  header img{
+header img{
     max-width: 200px;
     border-radius: 15px;
-  }
+}
 
-  header h1{
+header h1{
     font-size: 100px;
     font-family: 'Courier New', Courier, monospace;
-  }
+}
 
-  nav {
+nav {
     display: flex;
     background-color: #7fffd4;
-  }
-  
-  nav ul {
-    list-style-type: none;
-  }
+}
 
-  nav ul li {
+/* #menu and .dropdown-content are for smaller screen, they do not show at this stage*/
+#menu{
+    position: absolute;
+    right:50px;
+    top: 0px;
+    border: none; /* Remove button border */
+    display: none;
+}
+
+button img{
+    height: 80px;
+    width: 80px;
+}
+  
+.dropdown-content{
+    display:none;
+}
+
+.dropdown-content a{
+    font-size: 20px;
+    font-weight: 400;
+}
+  
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li {
     display: inline-block;
     margin-left: 25px;
     font-size: 25px;
-  }
+}
 
-  nav ul li a{
+/* Style the nav bar*/
+nav ul li a{
     font-family: 'Courier New', Courier, monospace;
     font-size: 25px;
     font-weight: 600;
     color: #000000;
     text-decoration: none;
-  }
+}
 
-  .hero {
+.hero {
     height: 500px;
     width: 100%;
     margin-bottom: 25px;
@@ -61,66 +85,176 @@
     background-position: center;
 }
 
-  main {
+main {
     max-width: 840px;
     margin:auto;
-  }
+}
 
-  #aboutMe{
+#aboutMe{
     text-align: center;
-  }
+}
 
-  #title{
+#title{
     flex:100%;
-  }
-  #projects {
+}
+
+#projects {
     display: flex;
     flex-wrap: wrap;
-  }
+}
 
-  #example{
+#example{
+    display:block;
+    position:relative;
+    height: 400px;
+    width: 400px;
+    padding:10px;
+}
+
+#example2{
     width: 400px;
     padding: 0 10px 10px 10px;
-  }
+}
 
-  #example2{
+#example3{
+    display:block;
+    position:relative;
+    height: 400px;
     width: 400px;
-    padding: 0 10px 10px 10px;
-  }
+    padding: 0 10px 100px 10px;
+}
 
-  h2{
+h2{
     font-size: 50px;
+    text-align: center;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: #000000;
-  }
+    padding-bottom: 20px;
+}
 
-  h3{
+h3{
     font-size: 25px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: #000000;
-  }
+    font-weight: 600;
+    padding-bottom: 5px;
+}
 
-  div img{
+div img{
     max-height: 300px;
     max-width: 300px;
-  }
+}
 
-  div img:hover{
+/* Enable the enlarge fearture on img while hovering it*/
+div img:hover{
     max-width: 400px;
     max-height: 400px;
-  }
-  #contactMe{
+    z-index: 1;
+}
+
+#contactMe{
     text-align: center;
-  }
-  footer{
+}
+
+footer{
     text-align: center;
-  }
-  .fa {
-    padding: 10px;
+}
+
+/* Sytle all the social media icons*/
+.fa {
+    padding: 15px;
     font-size: 30px;
-    width: 75px;
+    width: 50px;
     text-decoration: none;
-    margin: 50px 20px;
+    margin: 50px 15px;
     background: #000000;
     color: white;
-  }
+}
+
+/* This applies to the screen sizes between 800px and 1200px*/
+@media screen and (max-width: 1200px) {
+    nav ul {
+      display:none;
+    }
+
+    #menu {
+      display:block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      right:50px;
+      top: 83px;
+      background-color: #f1f1f1;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+    
+    .dropdown-content a:hover {
+      background-color: #ddd;
+    }
+
+    .dropdown:hover div.dropdown-content{
+      display:block;
+    }
+
+}
+
+/* This applies to the screen sizes between 400px and 800px*/
+
+@media screen and (max-width: 800px) {
+
+    body{
+      min-width: 400px;
+    }
+
+    header h1{
+      font-size: 45px;
+      font-family: 'Courier New', Courier, monospace;
+    }
+
+  
+    nav ul{
+      display: none;
+    }
+
+    nav img {
+      display:block;
+      height: 45px;
+      width: 45px;
+    }
+    
+    #menu{
+      position: absolute;
+      top:0px;
+      right:0px;
+    }
+
+    nav img:hover .nav ul{
+      display:block;
+    }
+
+    #projects {
+      display: flex;
+      justify-content: center;
+
+    }
+
+    #example, #example2, #example3{
+      display:block;
+      text-align: center;
+      position:relative;
+      height: 400px;
+      width: 400px;
+      padding:10px;
+    }
+
+}
